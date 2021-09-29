@@ -6,7 +6,6 @@ import "../styles/CountryPage/CountryPage.css"
 // Components
 import SearchForm from "../components/CountryPage/SearchForm"
 import Country from "../components/CountryPage/Country"
-import Loader from "../components/Loader"
 import Header from "../components/Header"
 import FetchError from "../components/FetchError"
 
@@ -39,7 +38,6 @@ const CountryPage = props => {
         }
        
     };
-    console.log(error)
 
     return (
         <>
