@@ -1,0 +1,48 @@
+
+.main-container-countryInfo {
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Poppins', sans-serif;
+    background-color: #171717;
+    padding: 30px;
+    padding-bottom: 50px;
+    justify-content: space-around;
+    border-radius: 25px;
+    margin-top: 50px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 90%); 
+
+}
+
+.main-container-countryInfo h1 {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 30px;
+    color: #EDEDED;;
+    text-align: center;
+    
+}
+
+
+
+.main-container-countryInfo span {
+    color: #DA0037;
+}
+
+.main-container-countryInfo p span {
+    font-weight: 600;
+}
+
+.main-container-countryInfo .main-info-countryInfo {
+    width: 40%;
+  
+    color: #EDEDED;
+}
+
+
+
+
+.main-container-countryInfo img {
+    max-width: 40%;
+}

@@ -1,32 +1,60 @@
 import React, {useState} from "react";
 
+// Styles
+import "../styles/CountryPage/CountryPage.css"
 
 // Components
 import SearchForm from "../components/CountryPage/SearchForm"
 import Country from "../components/CountryPage/Country"
+import Loader from "../components/Loader"
+import Header from "../components/Header"
+import FetchError from "../components/FetchError"
 
 
 const CountryPage = props => {
-    const [countryData, setCountryData] = useState([])
-    const [name, setName] = useState(null)
+    const [countryData, setCountryData] = useState([]);
+    const [name, setName] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
 
     // Functions
     const handleFetchCountryData = async () => {
-        const response = await fetch (
-            `https://restcountries.com/v3/name/${name}`
-            );
-        const result = await response.json();
-        console.log(result)
-        setCountryData(result)
-    }
+
+        try {
+            const response = await fetch (
+                `https://restcountries.com/v3/name/${name}?fullText=true`
+                );
+            const result = await response.json();
+            // console.log(result);
+            setLoading(true);
+            if (result.status) {
+                setError(result.message)
+            } else {
+                setCountryData(result);
+                setError(false)
+            }
+
+        } catch (e) {
+            setError(true);  
+        }
+       
+    };
+    console.log(error)
 
     return (
-        <div>
-            <SearchForm 
-            setName={setName}
-            handleFetchCountryData = {handleFetchCountryData}
-            />
+        <>
+        <Header/>
+        <SearchForm 
+        setName={setName}
+        handleFetchCountryData = {handleFetchCountryData}
+        />
+       { error ? (<FetchError
+                    message={error}/> )
+        : (
+            <div className="main-container">
+            
             {
+                
                 countryData.map(infoCountry => (
                     <Country
                         key={infoCountry.name.common}
@@ -35,10 +63,12 @@ const CountryPage = props => {
 
                     /> 
                 ))
-            }
-                   
+              
+            }     
         </div>
-    )
-}
+        )}
+        </>  
+    );
+};
 
 export default CountryPage;

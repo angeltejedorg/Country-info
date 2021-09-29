@@ -1,0 +1,28 @@
+.normal-header {
+    padding: 10px 20px;
+    background-color: #171717;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px rgb(0 0 0 / 90%); 
+    margin-bottom: 60px;
+  }
+
+  ul {
+    width: 30%;
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    align-items: center;    
+  }
+
+
+  a {
+      text-decoration: none;
+      color: #DA0037;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+  }
+
+
