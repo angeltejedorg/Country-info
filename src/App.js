@@ -2,12 +2,12 @@ import react from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // Views
-import CountryPage from "./views/CountryPage"
-import CountryDetails from "./views/CountryDetails"
+import CountryPage from "./views/CountryPage";
+import CountryDetails from "./views/CountryDetails";
 import FetchError from "./components/FetchError";
 import Home from "./views/Home";
 import NotFound from "./components/NotFound";
-
+import Weather from "./views/Weather";
 
 function App() {
   return (
@@ -21,6 +21,9 @@ function App() {
         </Route>
         <Route path="/details/:country" exact>
           <CountryDetails/>
+        </Route>
+        <Route path="/details/:country/weather/:city" exact>
+          <Weather/>
         </Route>
         
         <Route component={NotFound}/>

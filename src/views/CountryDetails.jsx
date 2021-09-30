@@ -40,6 +40,7 @@ const CountryDetails = props => {
         fetchDetailsAPI();
     }, []);
 
+    
 
     return (
         <>

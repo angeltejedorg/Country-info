@@ -46,25 +46,28 @@ const CountryPage = props => {
         setName={setName}
         handleFetchCountryData = {handleFetchCountryData}
         />
-       { error ? (<FetchError
-                    message={error}/> )
-        : (
-            <div className="main-container">
-            
-            {
+       {
+            error ? (<FetchError
+                        message={error}/> )
+            : (
+                <div className="main-container">
                 
-                countryData.map(infoCountry => (
-                    <Country
-                        key={infoCountry.name.common}
-                        flag={infoCountry.flags[0]}
-                        name={infoCountry.name.common}
+                {
+                    
+                    countryData.map(infoCountry => (
+                        <Country
+                            key={infoCountry.name.common}
+                            flag={infoCountry.flags[0]}
+                            name={infoCountry.name.common}
 
-                    /> 
-                ))
-              
-            }     
-        </div>
-        )}
+                        /> 
+                    ))
+                
+                }     
+                </div>
+            )
+
+        }
         </>  
     );
 };

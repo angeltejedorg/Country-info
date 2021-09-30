@@ -7,7 +7,7 @@ const SearchForm = ({setName, handleFetchCountryData}) => {
 
     return (
         <div className="input-container">
-
+            
             <h2>Enter country name:</h2>
             <input 
             type="text" 
@@ -15,7 +15,7 @@ const SearchForm = ({setName, handleFetchCountryData}) => {
             required
             onChange={e=> setName(e.target.value)}/>
 
-            <button onClick={handleFetchCountryData}>Search</button>
+            <button type="submit" onClick={handleFetchCountryData}>Search</button>
         </div>
     )
 }
